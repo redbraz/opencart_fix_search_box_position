@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<modification>
+  <name>Fix Opencart 3 search in anywhere</name>
+  <version>3.0</version>
+  <code>reds_fix_search_engine_box</code>
+  <author>REDS</author>
+  <link>https://www.prai.com.br/</link>
+	
+  <file path="catalog/view/javascript/common.js" error="skip">
+    <operation info="change search position to anywhere instead of header">
+      <search error="skip"><![CDATA[
+				$('nav #search input[name=\'search\']').parent().find('button').trigger('click');
+			]]></search>
+      <add position="replace"><![CDATA[
+			$('body #search input[name=\'search\']').parent().find('button').trigger('click');
+			]]></add>
+		</operation>
+	</file>
+	
+</modification>
